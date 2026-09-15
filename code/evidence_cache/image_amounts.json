@@ -1,0 +1,19 @@
+{
+  "_comment": "Final payable amounts read from dataset/media/images/*.png (Claude vision, cross-checked against 'amount in words' lines and OCR). Used as a cache; images.py falls back to OCR / optional Gemini for images not listed.",
+  "image_01": {"amount": "4365000", "currency": "IDR", "field": "Net Pay"},
+  "image_02": {"amount": "100000", "currency": "INR", "field": "Balance Due"},
+  "image_03": {"amount": "41272", "currency": "INR", "field": "Net Amount"},
+  "image_04": {"amount": "2854", "currency": "INR", "field": "Item Bill (total row cropped; delivery fee not visible)"},
+  "image_05": {"amount": "704.05", "currency": "INR", "field": "Amount due before due date"},
+  "image_06": {"amount": "1995.00", "currency": "INR", "field": "Total"},
+  "image_07": {"amount": "8528", "currency": "INR", "field": "Grand Total"},
+  "image_08": {"amount": "15339.00", "currency": "INR", "field": "Total Amount Received"},
+  "image_09": {"amount": "723.00", "currency": "INR", "field": "Total Amount Received"},
+  "image_10": {"amount": "79679.26", "currency": "INR", "field": "Balance Due"},
+  "image_11": {"amount": "3650.00", "currency": "INR", "field": "Amount Payable / Balance"},
+  "image_12": {"amount": "33.50", "currency": "USD", "field": "Total"},
+  "image_13": {"amount": "2298", "currency": "INR", "field": "Total paid"},
+  "image_14": {"amount": "4543.00", "currency": "INR", "field": "TOTAL"},
+  "image_15": {"amount": "9968.00", "currency": "INR", "field": "Grand Total"},
+  "image_16": {"amount": "393.22", "currency": "INR", "field": "Total"}
+}
