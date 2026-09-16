@@ -1,33 +1,21 @@
-# Usage Report
+# Token usage and cost report
 
-## Summary
+Final full-dataset run: `requests.csv` -> `output.csv` (250 requests, 1.74 s wall clock).
 
-- Requests processed: 250
-- Model/API calls: 18
-- Input tokens: 12043
-- Output tokens: 1771
-- Cached input tokens: 0
-- Errors: 0
+| Item | Value |
+|---|---|
+| Model providers / names | none - the shipped pipeline is fully deterministic |
+| Model calls | 0 |
+| Input tokens | 0 |
+| Output tokens | 0 |
+| Total tokens | 0 |
+| Average tokens per request | 0 |
+| Estimated total cost (USD) | 0.00 |
+| Estimated cost per request (USD) | 0.00 |
 
-## Call Details
+## How evidence was handled in this run
 
-| # | Model | Input tokens | Output tokens | Cached input tokens | Error |
-|---:|---|---:|---:|---:|---|
-| 1 | gemini-3.6-flash | 661 | 97 | 0 | False |
-| 2 | gemini-3.6-flash | 678 | 90 | 0 | False |
-| 3 | gemini-3.6-flash | 657 | 99 | 0 | False |
-| 4 | gemini-3.6-flash | 663 | 91 | 0 | False |
-| 5 | gemini-3.6-flash | 654 | 91 | 0 | False |
-| 6 | gemini-3.6-flash | 668 | 107 | 0 | False |
-| 7 | gemini-3.6-flash | 666 | 91 | 0 | False |
-| 8 | gemini-3.6-flash | 683 | 106 | 0 | False |
-| 9 | gemini-3.6-flash | 684 | 91 | 0 | False |
-| 10 | gemini-3.6-flash | 675 | 121 | 0 | False |
-| 11 | gemini-3.6-flash | 661 | 91 | 0 | False |
-| 12 | gemini-3.6-flash | 675 | 98 | 0 | False |
-| 13 | gemini-3.6-flash | 676 | 108 | 0 | False |
-| 14 | gemini-3.6-flash | 661 | 100 | 0 | False |
-| 15 | gemini-3.6-flash | 667 | 92 | 0 | False |
-| 16 | gemini-3.6-flash | 665 | 100 | 0 | False |
-| 17 | gemini-3.6-flash | 683 | 106 | 0 | False |
-| 18 | gemini-3.6-flash | 666 | 92 | 0 | False |
+- Messages read: 198 (198 matched an intent pattern, 0 unmatched and therefore ignored).
+- Images needed: 11 (cache hits: 11, OCR fallback: 0, unresolved: 0).
+- `evidence_cache/image_amounts.json` holds the 16 amounts that were read from the images by Claude's vision during development (cross-checked with the *amount in words* line or OCR). That one-off, offline step is not part of the run above and is not counted in the token totals.
+- Message and image content is treated as untrusted data: only dates, amounts and intents are extracted; no instruction inside a message can change the rules.
