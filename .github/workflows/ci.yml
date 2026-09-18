@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Unit, end-to-end and independent-verifier tests
+        run: python -m unittest discover -s code/tests -v
+      - name: Score the 25 labelled samples
+        run: python code/benchmark.py
+      - name: Regenerate output.csv and make sure it is reproducible
+        run: |
+          python code/main.py --out /tmp/output.csv
+          diff output.csv /tmp/output.csv
