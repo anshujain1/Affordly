@@ -69,7 +69,7 @@ def run(data_dir, requests_file="requests.csv", out_path="output.csv") -> list[d
     fx = FxConverter(ds.rates)
     rows = [solve_request(ds, fx, rid) for rid in ds.requests]
     with open(out_path, "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=COLUMNS)
+        w = csv.DictWriter(fh, fieldnames=COLUMNS, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
     return rows

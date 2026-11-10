@@ -1,6 +1,6 @@
 # Token usage and cost report
 
-Final full-dataset run: `requests.csv` -> `output.csv` (250 requests, 1.74 s wall clock).
+Final full-dataset run: `requests.csv` -> `output.csv` (250 requests, 1.69 s wall clock).
 
 | Item | Value |
 |---|---|
